@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEOM — Your Voice Matters</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #FAF8F5;
+    color: #2C2C2C;
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    background: linear-gradient(180deg, #F5F0EB 0%, #FAF8F5 100%);
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #C4B5A4);
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #A89B8C;
+    margin-bottom: 48px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #2C2C2C;
+    margin-bottom: 24px;
+    max-width: 600px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    color: #8C8279;
+    max-width: 420px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  /* ── Letter ── */
+  .letter-section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 100px 24px 80px;
+  }
+
+  .letter-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #3D3832;
+    font-weight: 400;
+  }
+
+  .letter-body p {
+    margin-bottom: 28px;
+  }
+
+  .letter-body strong {
+    font-weight: 600;
+    color: #2C2C2C;
+  }
+
+  .letter-body em {
+    font-style: italic;
+    color: #6B5F53;
+  }
+
+  .letter-sign {
+    margin-top: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #8C8279;
+  }
+
+  .letter-sign .love {
+    font-style: italic;
+    font-size: 18px;
+    color: #A89B8C;
+    margin-bottom: 4px;
+  }
+
+  .letter-sign .team {
+    font-weight: 500;
+    color: #3D3832;
+    letter-spacing: 2px;
+    font-size: 13px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    text-align: center;
+    padding: 64px 0;
+  }
+
+  .divider-line {
+    width: 48px;
+    height: 1px;
+    background: #C4B5A4;
+    margin: 0 auto;
+  }
+
+  /* ── Survey ── */
+  .survey-section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px 120px;
+  }
+
+  .survey-intro {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .survey-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: #2C2C2C;
+    margin-bottom: 12px;
+  }
+
+  .survey-intro p {
+    font-size: 13px;
+    color: #8C8279;
+    font-weight: 300;
+  }
+
+  .question-group {
+    margin-bottom: 56px;
+  }
+
+  .question-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: #C4B5A4;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  .question-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #2C2C2C;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  /* ── Radio / Checkbox Styles ── */
+  .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .option-pill {
+    display: none;
+  }
+
+  .option-pill + label {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid #DDD5CC;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #5C5347;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+  }
+
+  .option-pill + label:hover {
+    border-color: #A89B8C;
+    color: #2C2C2C;
+    background: rgba(168, 155, 140, 0.06);
+  }
+
+  .option-pill:checked + label {
+    background: #2C2C2C;
+    color: #FAF8F5;
+    border-color: #2C2C2C;
+  }
+
+  /* ── Scale ── */
+  .scale-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .scale-item {
+    display: none;
+  }
+
+  .scale-item + label {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    border: 1px solid #DDD5CC;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #8C8279;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .scale-item + label:first-of-type { border-radius: 8px 0 0 8px; }
+  .scale-item + label:last-of-type { border-radius: 0 8px 8px 0; }
+
+  .scale-item:checked + label {
+    background: #2C2C2C;
+    color: #FAF8F5;
+    border-color: #2C2C2C;
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #A89B8C;
+    padding: 0 4px;
+  }
+
+  /* ── Textarea ── */
+  textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    border: 1px solid #DDD5CC;
+    border-radius: 4px;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #2C2C2C;
+    line-height: 1.8;
+    resize: vertical;
+    transition: border-color 0.25s ease;
+    outline: none;
+  }
+
+  textarea:focus {
+    border-color: #A89B8C;
+  }
+
+  textarea::placeholder {
+    color: #C4B5A4;
+  }
+
+  /* ── Submit ── */
+  .submit-area {
+    text-align: center;
+    padding: 40px 0 0;
+  }
+
+  .submit-btn {
+    display: inline-block;
+    padding: 16px 64px;
+    background: #2C2C2C;
+    color: #FAF8F5;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background: #1A1A1A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .submit-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #B5AA9E;
+  }
+
+  /* ── Thank You (hidden by default) ── */
+  .thank-you {
+    display: none;
+    text-align: center;
+    padding: 120px 24px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .thank-you.show {
+    display: block;
+  }
+
+  .thank-you h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .thank-you p {
+    font-size: 14px;
+    color: #8C8279;
+    line-height: 1.9;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 11px;
+    color: #C4B5A4;
+    letter-spacing: 3px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .scale-row { gap: 4px; }
+    .scale-item + label { padding: 12px 0; font-size: 14px; }
+    .option-pill + label { padding: 8px 16px; font-size: 12px; }
+    .letter-body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="brand-name">a e o m</div>
+  <h1 class="hero-title">Your Voice<br>Shapes Our Future</h1>
+  <p class="hero-subtitle">
+    We're at a turning point — and your honest words<br>
+    will help us become what you deserve.
+  </p>
+</div>
+
+<!-- ═══ LETTER ═══ -->
+<div class="letter-section">
+  <div class="letter-body">
+    <p>Dear &amp;EYE and MYSELF members,</p>
+
+    <p>Since our Rebirth, we've been moving towards something extraordinary.</p>
+
+    <p>We partnered with <strong>Makalot</strong>, a global garment manufacturing giant with a front-row commitment to compliance — because leaving the earth a little better than we found it matters to us.</p>
+
+    <p>We chose <strong>Tencel</strong> and <strong>Umorfil</strong> for the same reason. Recycled from natural fibres and fish collagen. We're proud of that choice.</p>
+
+    <p>We built our own logistics — to store, organise, and prepare your garments with the care they deserve — and to make sure they arrive on time for the moments that matter.</p>
+
+    <p>We opened our <strong>Da'an store</strong> for one reason: to give you the space and time to try things on — no pressure, no rush.</p>
+
+    <p>We believe these garments should serve your body. Make you feel so good that your morning becomes effortless. Every piece carries our care for you — hoping you can <em>glow and be ready for the world in just a few minutes.</em></p>
+
+    <p>Now, we're at a pivotal point. To serve you better, we need to hear from you.</p>
+
+    <div class="letter-sign">
+      <div class="love">With love,</div>
+      <div class="team">TEAM AEOM</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ═══ SURVEY ═══ -->
+<form id="surveyForm">
+<div class="survey-section">
+  <div class="survey-intro">
+    <h2>A Few Questions</h2>
+    <p>Takes about 3 minutes · Your answers shape what comes next</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question-group">
+    <div class="question-number">01</div>
+    <div class="question-label">How would you rate the overall quality of our Bratops?</div>
+    <div class="scale-row">
+      <input type="radio" name="q1" value="1" id="q1_1" class="scale-item"><label for="q1_1">1</label>
+      <input type="radio" name="q1" value="2" id="q1_2" class="scale-item"><label for="q1_2">2</label>
+      <input type="radio" name="q1" value="3" id="q1_3" class="scale-item"><label for="q1_3">3</label>
+      <input type="radio" name="q1" value="4" id="q1_4" class="scale-item"><label for="q1_4">4</label>
+      <input type="radio" name="q1" value="5" id="q1_5" class="scale-item"><label for="q1_5">5</label>
+    </div>
+    <div class="scale-labels">
+      <span>Needs work</span>
+      <span>Exceptional</span>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-group">
+    <div class="question-number">02</div>
+    <div class="question-label">How do you feel about Bratop pricing at NT$1,480?</div>
+    <div class="options-grid">
+      <input type="radio" name="q2" value="too-high" id="q2_a" class="option-pill"><label for="q2_a">A bit high</label>
+      <input type="radio" name="q2" value="fair" id="q2_b" class="option-pill"><label for="q2_b">Fair for the quality</label>
+      <input type="radio" name="q2" value="worth-it" id="q2_c" class="option-pill"><label for="q2_c">Worth every dollar</label>
+      <input type="radio" name="q2" value="would-pay-more" id="q2_d" class="option-pill"><label for="q2_d">Would pay more for better materials</label>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-group">
+    <div class="question-number">03</div>
+    <div class="question-label">What about our other products — quality vs. price?</div>
+    <div class="scale-row">
+      <input type="radio" name="q3" value="1" id="q3_1" class="scale-item"><label for="q3_1">1</label>
+      <input type="radio" name="q3" value="2" id="q3_2" class="scale-item"><label for="q3_2">2</label>
+      <input type="radio" name="q3" value="3" id="q3_3" class="scale-item"><label for="q3_3">3</label>
+      <input type="radio" name="q3" value="4" id="q3_4" class="scale-item"><label for="q3_4">4</label>
+      <input type="radio" name="q3" value="5" id="q3_5" class="scale-item"><label for="q3_5">5</label>
+    </div>
+    <div class="scale-labels">
+      <span>Price too high for quality</span>
+      <span>Quality exceeds price</span>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-group">
+    <div class="question-number">04</div>
+    <div class="question-label">Should we invest in higher-cost materials to elevate further?</div>
+    <div class="options-grid">
+      <input type="radio" name="q4" value="keep-current" id="q4_a" class="option-pill"><label for="q4_a">Keep current quality</label>
+      <input type="radio" name="q4" value="upgrade-slightly" id="q4_b" class="option-pill"><label for="q4_b">Upgrade slightly, same price</label>
+      <input type="radio" name="q4" value="upgrade-pay-more" id="q4_c" class="option-pill"><label for="q4_c">Upgrade — I'd pay more</label>
+      <input type="radio" name="q4" value="premium-line" id="q4_d" class="option-pill"><label for="q4_d">Create a separate premium line</label>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-group">
+    <div class="question-number">05</div>
+    <div class="question-label">What would you love to see from AEOM next?</div>
+    <p style="font-size: 12px; color: #A89B8C; margin-bottom: 16px;">Select all that excite you</p>
+    <div class="options-grid">
+      <input type="checkbox" name="q5" value="bodysuit" id="q5_a" class="option-pill"><label for="q5_a">Bodysuits</label>
+      <input type="checkbox" name="q5" value="sleepwear" id="q5_b" class="option-pill"><label for="q5_b">Sleepwear</label>
+      <input type="checkbox" name="q5" value="activewear" id="q5_c" class="option-pill"><label for="q5_c">Activewear</label>
+      <input type="checkbox" name="q5" value="swimwear" id="q5_d" class="option-pill"><label for="q5_d">Swimwear</label>
+      <input type="checkbox" name="q5" value="outerwear" id="q5_e" class="option-pill"><label for="q5_e">Outerwear</label>
+      <input type="checkbox" name="q5" value="accessories" id="q5_f" class="option-pill"><label for="q5_f">Accessories</label>
+      <input type="checkbox" name="q5" value="mens" id="q5_g" class="option-pill"><label for="q5_g">Men's basics</label>
+      <input type="checkbox" name="q5" value="kids" id="q5_h" class="option-pill"><label for="q5_h">Kids</label>
+      <input type="checkbox" name="q5" value="home" id="q5_i" class="option-pill"><label for="q5_i">Home & lifestyle</label>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-group">
+    <div class="question-number">06</div>
+    <div class="question-label">How often do you wear AEOM pieces in a typical week?</div>
+    <div class="options-grid">
+      <input type="radio" name="q6" value="daily" id="q6_a" class="option-pill"><label for="q6_a">Every day</label>
+      <input type="radio" name="q6" value="4-5" id="q6_b" class="option-pill"><label for="q6_b">4-5 days</label>
+      <input type="radio" name="q6" value="2-3" id="q6_c" class="option-pill"><label for="q6_c">2-3 days</label>
+      <input type="radio" name="q6" value="1" id="q6_d" class="option-pill"><label for="q6_d">Once a week</label>
+      <input type="radio" name="q6" value="less" id="q6_e" class="option-pill"><label for="q6_e">Less often</label>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-group">
+    <div class="question-number">07</div>
+    <div class="question-label">Have you recommended AEOM to someone?</div>
+    <div class="options-grid">
+      <input type="radio" name="q7" value="yes-many" id="q7_a" class="option-pill"><label for="q7_a">Yes, many times</label>
+      <input type="radio" name="q7" value="yes-few" id="q7_b" class="option-pill"><label for="q7_b">Yes, once or twice</label>
+      <input type="radio" name="q7" value="not-yet" id="q7_c" class="option-pill"><label for="q7_c">Not yet, but I would</label>
+      <input type="radio" name="q7" value="no" id="q7_d" class="option-pill"><label for="q7_d">Probably not</label>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-group">
+    <div class="question-number">08</div>
+    <div class="question-label">Anything else on your mind? We're all ears.</div>
+    <textarea name="q8" placeholder="Your honest thoughts — about fit, fabric, design, service, anything at all..."></textarea>
+  </div>
+
+  <!-- Submit -->
+  <div class="submit-area">
+    <button type="submit" class="submit-btn">Send My Thoughts</button>
+    <p class="submit-note">Your responses are anonymous and deeply appreciated.</p>
+  </div>
+</div>
+</form>
+
+<!-- ═══ THANK YOU ═══ -->
+<div class="thank-you" id="thankYou">
+  <h2>Thank You ♡</h2>
+  <p>Your words mean more than you know.<br>They'll shape the garments you wear next.</p>
+  <div style="margin-top: 48px;">
+    <div class="brand-name" style="margin-bottom: 0;">a e o m</div>
+  </div>
+</div>
+
+<div class="footer">A E O M · ALL EYES ON ME</div>
+
+<script>
+document.getElementById('surveyForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const btn = document.querySelector('.submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  const formData = new FormData(this);
+  const data = {};
+  for (let [key, value] of formData.entries()) {
+    if (data[key]) {
+      if (Array.isArray(data[key])) data[key].push(value);
+      else data[key] = [data[key], value];
+    } else {
+      data[key] = value;
+    }
+  }
+  
+  // Submit to Google Apps Script
+  const ENDPOINT = 'APPS_SCRIPT_URL';
+  try {
+    if (ENDPOINT !== 'APPS_SCRIPT_URL') {
+      await fetch(ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    }
+  } catch(err) {
+    console.log('Submission note:', err);
+  }
+  
+  // Show thank you
+  document.querySelector('.hero').style.display = 'none';
+  document.querySelector('.letter-section').style.display = 'none';
+  document.querySelector('.divider').style.display = 'none';
+  document.querySelector('.survey-section').style.display = 'none';
+  document.getElementById('thankYou').classList.add('show');
+  window.scrollTo(0, 0);
+});
+</script>
+
+</body>
+</html>
