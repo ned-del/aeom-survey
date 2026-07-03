@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEOM — Your Voice Matters</title>
+<title>AEOM — Your Voice Shapes Our Future</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 
@@ -42,13 +42,13 @@
     background: linear-gradient(180deg, transparent, #C4B5A4);
   }
 
-  .brand-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    color: #A89B8C;
+  .brand-logo {
     margin-bottom: 48px;
+  }
+
+  .brand-logo img {
+    height: 28px;
+    width: auto;
   }
 
   .hero-title {
@@ -57,14 +57,24 @@
     font-weight: 300;
     line-height: 1.2;
     color: #2C2C2C;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
+    max-width: 600px;
+  }
+
+  .hero-title-zh {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 300;
+    line-height: 1.3;
+    color: #6B5F53;
+    margin-bottom: 28px;
     max-width: 600px;
   }
 
   .hero-subtitle {
     font-size: 14px;
     color: #8C8279;
-    max-width: 420px;
+    max-width: 460px;
     line-height: 1.9;
     font-weight: 300;
   }
@@ -88,6 +98,12 @@
     margin-bottom: 28px;
   }
 
+  .letter-body .zh {
+    color: #6B5F53;
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
   .letter-body strong {
     font-weight: 600;
     color: #2C2C2C;
@@ -103,20 +119,20 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px;
     color: #8C8279;
+    text-align: center;
   }
 
   .letter-sign .love {
     font-style: italic;
     font-size: 18px;
     color: #A89B8C;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
   }
 
-  .letter-sign .team {
-    font-weight: 500;
-    color: #3D3832;
-    letter-spacing: 2px;
-    font-size: 13px;
+  .letter-sign img {
+    height: 22px;
+    width: auto;
+    margin-top: 8px;
   }
 
   /* ── Divider ── */
@@ -149,6 +165,14 @@
     font-size: 28px;
     font-weight: 300;
     color: #2C2C2C;
+    margin-bottom: 4px;
+  }
+
+  .survey-intro .zh {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #6B5F53;
     margin-bottom: 12px;
   }
 
@@ -175,6 +199,15 @@
     font-size: 20px;
     font-weight: 400;
     color: #2C2C2C;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .question-label-zh {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #6B5F53;
     margin-bottom: 24px;
     line-height: 1.5;
   }
@@ -201,6 +234,7 @@
     cursor: pointer;
     transition: all 0.25s ease;
     user-select: none;
+    line-height: 1.5;
   }
 
   .option-pill + label:hover {
@@ -254,6 +288,7 @@
     font-size: 11px;
     color: #A89B8C;
     padding: 0 4px;
+    margin-bottom: 4px;
   }
 
   /* ── Textarea ── */
@@ -333,12 +368,28 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    color: #2C2C2C;
+  }
+
+  .thank-you .zh {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: #6B5F53;
+    margin-bottom: 24px;
   }
 
   .thank-you p {
     font-size: 14px;
     color: #8C8279;
+    line-height: 1.9;
+  }
+
+  .thank-you .zh-sub {
+    font-size: 13px;
+    color: #A89B8C;
+    margin-top: 8px;
     line-height: 1.9;
   }
 
@@ -357,6 +408,7 @@
     .scale-item + label { padding: 12px 0; font-size: 14px; }
     .option-pill + label { padding: 8px 16px; font-size: 12px; }
     .letter-body { font-size: 16px; }
+    .letter-body .zh { font-size: 14px; }
   }
 </style>
 </head>
@@ -364,11 +416,16 @@
 
 <!-- ═══ HERO ═══ -->
 <div class="hero">
-  <div class="brand-name">a e o m</div>
+  <div class="brand-logo">
+    <img src="https://img.shoplineapp.com/media/image_clips/68e89058bef11100143af6eb/original.png?1760071768" alt="aeom">
+  </div>
   <h1 class="hero-title">Your Voice<br>Shapes Our Future</h1>
+  <div class="hero-title-zh">你的聲音，決定我們的未來</div>
   <p class="hero-subtitle">
     We're at a turning point — and your honest words<br>
-    will help us become what you deserve.
+    will help us become what you deserve.<br><br>
+    我們正站在轉捩點——你真誠的聲音，<br>
+    將引領我們成為你值得擁有的品牌。
   </p>
 </div>
 
@@ -376,24 +433,32 @@
 <div class="letter-section">
   <div class="letter-body">
     <p>Dear &amp;EYE and MYSELF members,</p>
+    <p class="zh">親愛的 &amp;EYE 和 MYSELF 會員們，</p>
 
     <p>Since our Rebirth, we've been moving towards something extraordinary.</p>
+    <p class="zh">自從品牌重生以來，我們一直朝著不凡的方向前進。</p>
 
     <p>We partnered with <strong>Makalot</strong>, a global garment manufacturing giant with a front-row commitment to compliance — because leaving the earth a little better than we found it matters to us.</p>
+    <p class="zh">我們與全球服裝製造巨擘 <strong>Makalot 聚陽實業</strong>合作，一間以合規為先的企業——因為讓地球變得更好一點，對我們來說很重要。</p>
 
     <p>We chose <strong>Tencel</strong> and <strong>Umorfil</strong> for the same reason. Recycled from natural fibres and fish collagen. We're proud of that choice.</p>
+    <p class="zh">我們選擇 <strong>Tencel</strong> 和 <strong>Umorfil</strong> 也是同樣的原因。取自天然纖維與魚鱗膠原蛋白的再生材質，我們為這個選擇感到驕傲。</p>
 
     <p>We built our own logistics — to store, organise, and prepare your garments with the care they deserve — and to make sure they arrive on time for the moments that matter.</p>
+    <p class="zh">我們打造了自己的物流——用心存放、整理、準備每件衣物——確保它們在重要時刻準時送達你手中。</p>
 
     <p>We opened our <strong>Da'an store</strong> for one reason: to give you the space and time to try things on — no pressure, no rush.</p>
+    <p class="zh">我們在<strong>大安</strong>開設實體店，只為一個理由：給你空間和時間，不被打擾地試穿——沒有壓力，不用急。</p>
 
     <p>We believe these garments should serve your body. Make you feel so good that your morning becomes effortless. Every piece carries our care for you — hoping you can <em>glow and be ready for the world in just a few minutes.</em></p>
+    <p class="zh">我們相信這些衣物應該服務於你的身體。讓你感覺如此舒適，以至於早晨變得毫不費力。每一件都承載著我們對你的用心——<em>希望你能在幾分鐘內，發光準備好迎接世界。</em></p>
 
     <p>Now, we're at a pivotal point. To serve you better, we need to hear from you.</p>
+    <p class="zh">現在，我們站在關鍵的時刻。為了更好地服務你，我們需要聽到你的聲音。</p>
 
     <div class="letter-sign">
-      <div class="love">With love,</div>
-      <div class="team">TEAM AEOM</div>
+      <div class="love">With love, / 用心，</div>
+      <img src="https://img.shoplineapp.com/media/image_clips/68e89058bef11100143af6eb/original.png?1760071768" alt="aeom">
     </div>
   </div>
 </div>
@@ -405,13 +470,15 @@
 <div class="survey-section">
   <div class="survey-intro">
     <h2>A Few Questions</h2>
-    <p>Takes about 3 minutes · Your answers shape what comes next</p>
+    <div class="zh">幾個小問題</div>
+    <p>Takes about 3 minutes · Your answers shape what comes next<br>大約 3 分鐘 · 你的回答將決定我們的下一步</p>
   </div>
 
   <!-- Q1 -->
   <div class="question-group">
     <div class="question-number">01</div>
     <div class="question-label">How would you rate the overall quality of our Bratops?</div>
+    <div class="question-label-zh">你覺得我們 Bratop 的品質如何？</div>
     <div class="scale-row">
       <input type="radio" name="q1" value="1" id="q1_1" class="scale-item"><label for="q1_1">1</label>
       <input type="radio" name="q1" value="2" id="q1_2" class="scale-item"><label for="q1_2">2</label>
@@ -420,8 +487,8 @@
       <input type="radio" name="q1" value="5" id="q1_5" class="scale-item"><label for="q1_5">5</label>
     </div>
     <div class="scale-labels">
-      <span>Needs work</span>
-      <span>Exceptional</span>
+      <span>Room to improve / 還有進步空間</span>
+      <span>Exceptional craftsmanship / 超越期待的品質</span>
     </div>
   </div>
 
@@ -429,11 +496,12 @@
   <div class="question-group">
     <div class="question-number">02</div>
     <div class="question-label">How do you feel about Bratop pricing at NT$1,480?</div>
+    <div class="question-label-zh">對於 Bratop NT$1,480 的定價，你的感受是？</div>
     <div class="options-grid">
-      <input type="radio" name="q2" value="too-high" id="q2_a" class="option-pill"><label for="q2_a">A bit high</label>
-      <input type="radio" name="q2" value="fair" id="q2_b" class="option-pill"><label for="q2_b">Fair for the quality</label>
-      <input type="radio" name="q2" value="worth-it" id="q2_c" class="option-pill"><label for="q2_c">Worth every dollar</label>
-      <input type="radio" name="q2" value="would-pay-more" id="q2_d" class="option-pill"><label for="q2_d">Would pay more for better materials</label>
+      <input type="radio" name="q2" value="fair" id="q2_a" class="option-pill"><label for="q2_a">Fair — the quality justifies it<br>合理 — 品質說得上這個價</label>
+      <input type="radio" name="q2" value="worth-it" id="q2_b" class="option-pill"><label for="q2_b">Worth every dollar<br>物超所值</label>
+      <input type="radio" name="q2" value="invest-more" id="q2_c" class="option-pill"><label for="q2_c">I'd invest more for even better materials<br>願意為更好的材質投資更多</label>
+      <input type="radio" name="q2" value="gifting" id="q2_d" class="option-pill"><label for="q2_d">Could be more accessible for gifting<br>如果送人的話希望再親民一點</label>
     </div>
   </div>
 
@@ -441,6 +509,7 @@
   <div class="question-group">
     <div class="question-number">03</div>
     <div class="question-label">What about our other products — quality vs. price?</div>
+    <div class="question-label-zh">其他產品的品質和定價呢？</div>
     <div class="scale-row">
       <input type="radio" name="q3" value="1" id="q3_1" class="scale-item"><label for="q3_1">1</label>
       <input type="radio" name="q3" value="2" id="q3_2" class="scale-item"><label for="q3_2">2</label>
@@ -449,8 +518,8 @@
       <input type="radio" name="q3" value="5" id="q3_5" class="scale-item"><label for="q3_5">5</label>
     </div>
     <div class="scale-labels">
-      <span>Price too high for quality</span>
-      <span>Quality exceeds price</span>
+      <span>Quality could be higher / 品質還能再提升</span>
+      <span>Quality exceeds expectations / 品質超越期待</span>
     </div>
   </div>
 
@@ -458,11 +527,12 @@
   <div class="question-group">
     <div class="question-number">04</div>
     <div class="question-label">Should we invest in higher-cost materials to elevate further?</div>
+    <div class="question-label-zh">我們該投資更高成本的材質來提升品質嗎？</div>
     <div class="options-grid">
-      <input type="radio" name="q4" value="keep-current" id="q4_a" class="option-pill"><label for="q4_a">Keep current quality</label>
-      <input type="radio" name="q4" value="upgrade-slightly" id="q4_b" class="option-pill"><label for="q4_b">Upgrade slightly, same price</label>
-      <input type="radio" name="q4" value="upgrade-pay-more" id="q4_c" class="option-pill"><label for="q4_c">Upgrade — I'd pay more</label>
-      <input type="radio" name="q4" value="premium-line" id="q4_d" class="option-pill"><label for="q4_d">Create a separate premium line</label>
+      <input type="radio" name="q4" value="excellent" id="q4_a" class="option-pill"><label for="q4_a">Current quality is already excellent<br>目前的品質已經很好</label>
+      <input type="radio" name="q4" value="subtle-upgrade" id="q4_b" class="option-pill"><label for="q4_b">Yes — subtle upgrades at the same price<br>好 — 同價位微幅升級</label>
+      <input type="radio" name="q4" value="pay-more" id="q4_c" class="option-pill"><label for="q4_c">Yes — I'd pay more for premium materials<br>好 — 願意為更好的材質多付一些</label>
+      <input type="radio" name="q4" value="premium-line" id="q4_d" class="option-pill"><label for="q4_d">Create a separate premium collection<br>推出獨立的精品系列</label>
     </div>
   </div>
 
@@ -470,17 +540,18 @@
   <div class="question-group">
     <div class="question-number">05</div>
     <div class="question-label">What would you love to see from AEOM next?</div>
-    <p style="font-size: 12px; color: #A89B8C; margin-bottom: 16px;">Select all that excite you</p>
+    <div class="question-label-zh">你希望 AEOM 下一步推出什麼？</div>
+    <p style="font-size: 12px; color: #A89B8C; margin-bottom: 16px;">Select all that excite you / 選擇所有讓你期待的</p>
     <div class="options-grid">
-      <input type="checkbox" name="q5" value="bodysuit" id="q5_a" class="option-pill"><label for="q5_a">Bodysuits</label>
-      <input type="checkbox" name="q5" value="sleepwear" id="q5_b" class="option-pill"><label for="q5_b">Sleepwear</label>
-      <input type="checkbox" name="q5" value="activewear" id="q5_c" class="option-pill"><label for="q5_c">Activewear</label>
-      <input type="checkbox" name="q5" value="swimwear" id="q5_d" class="option-pill"><label for="q5_d">Swimwear</label>
-      <input type="checkbox" name="q5" value="outerwear" id="q5_e" class="option-pill"><label for="q5_e">Outerwear</label>
-      <input type="checkbox" name="q5" value="accessories" id="q5_f" class="option-pill"><label for="q5_f">Accessories</label>
-      <input type="checkbox" name="q5" value="mens" id="q5_g" class="option-pill"><label for="q5_g">Men's basics</label>
-      <input type="checkbox" name="q5" value="kids" id="q5_h" class="option-pill"><label for="q5_h">Kids</label>
-      <input type="checkbox" name="q5" value="home" id="q5_i" class="option-pill"><label for="q5_i">Home & lifestyle</label>
+      <input type="checkbox" name="q5" value="bodysuit" id="q5_a" class="option-pill"><label for="q5_a">Bodysuits / 連身衣</label>
+      <input type="checkbox" name="q5" value="sleepwear" id="q5_b" class="option-pill"><label for="q5_b">Sleepwear / 睡衣</label>
+      <input type="checkbox" name="q5" value="activewear" id="q5_c" class="option-pill"><label for="q5_c">Activewear / 運動服</label>
+      <input type="checkbox" name="q5" value="swimwear" id="q5_d" class="option-pill"><label for="q5_d">Swimwear / 泳裝</label>
+      <input type="checkbox" name="q5" value="outerwear" id="q5_e" class="option-pill"><label for="q5_e">Outerwear / 外套</label>
+      <input type="checkbox" name="q5" value="accessories" id="q5_f" class="option-pill"><label for="q5_f">Accessories / 配件</label>
+      <input type="checkbox" name="q5" value="mens" id="q5_g" class="option-pill"><label for="q5_g">Men's basics / 男性基本款</label>
+      <input type="checkbox" name="q5" value="kids" id="q5_h" class="option-pill"><label for="q5_h">Kids / 童裝</label>
+      <input type="checkbox" name="q5" value="home" id="q5_i" class="option-pill"><label for="q5_i">Home & lifestyle / 居家生活</label>
     </div>
   </div>
 
@@ -488,12 +559,13 @@
   <div class="question-group">
     <div class="question-number">06</div>
     <div class="question-label">How often do you wear AEOM pieces in a typical week?</div>
+    <div class="question-label-zh">你一週穿幾天 AEOM？</div>
     <div class="options-grid">
-      <input type="radio" name="q6" value="daily" id="q6_a" class="option-pill"><label for="q6_a">Every day</label>
-      <input type="radio" name="q6" value="4-5" id="q6_b" class="option-pill"><label for="q6_b">4-5 days</label>
-      <input type="radio" name="q6" value="2-3" id="q6_c" class="option-pill"><label for="q6_c">2-3 days</label>
-      <input type="radio" name="q6" value="1" id="q6_d" class="option-pill"><label for="q6_d">Once a week</label>
-      <input type="radio" name="q6" value="less" id="q6_e" class="option-pill"><label for="q6_e">Less often</label>
+      <input type="radio" name="q6" value="daily" id="q6_a" class="option-pill"><label for="q6_a">Every day / 每天</label>
+      <input type="radio" name="q6" value="4-5" id="q6_b" class="option-pill"><label for="q6_b">4-5 days / 4-5 天</label>
+      <input type="radio" name="q6" value="2-3" id="q6_c" class="option-pill"><label for="q6_c">2-3 days / 2-3 天</label>
+      <input type="radio" name="q6" value="1" id="q6_d" class="option-pill"><label for="q6_d">Once a week / 一週一次</label>
+      <input type="radio" name="q6" value="less" id="q6_e" class="option-pill"><label for="q6_e">Less often / 更少</label>
     </div>
   </div>
 
@@ -501,25 +573,27 @@
   <div class="question-group">
     <div class="question-number">07</div>
     <div class="question-label">Have you recommended AEOM to someone?</div>
+    <div class="question-label-zh">你有推薦過 AEOM 給別人嗎？</div>
     <div class="options-grid">
-      <input type="radio" name="q7" value="yes-many" id="q7_a" class="option-pill"><label for="q7_a">Yes, many times</label>
-      <input type="radio" name="q7" value="yes-few" id="q7_b" class="option-pill"><label for="q7_b">Yes, once or twice</label>
-      <input type="radio" name="q7" value="not-yet" id="q7_c" class="option-pill"><label for="q7_c">Not yet, but I would</label>
-      <input type="radio" name="q7" value="no" id="q7_d" class="option-pill"><label for="q7_d">Probably not</label>
+      <input type="radio" name="q7" value="go-to" id="q7_a" class="option-pill"><label for="q7_a">Yes — it's my go-to recommendation<br>有 — 這是我的首選推薦</label>
+      <input type="radio" name="q7" value="once-twice" id="q7_b" class="option-pill"><label for="q7_b">Yes, once or twice<br>有，一兩次</label>
+      <input type="radio" name="q7" value="would" id="q7_c" class="option-pill"><label for="q7_c">Not yet, but I would<br>還沒，但我會</label>
+      <input type="radio" name="q7" value="secret" id="q7_d" class="option-pill"><label for="q7_d">I keep it as my secret<br>我把它當作自己的秘密</label>
     </div>
   </div>
 
   <!-- Q8 -->
   <div class="question-group">
     <div class="question-number">08</div>
-    <div class="question-label">Anything else on your mind? We're all ears.</div>
-    <textarea name="q8" placeholder="Your honest thoughts — about fit, fabric, design, service, anything at all..."></textarea>
+    <div class="question-label">Anything else on your mind?</div>
+    <div class="question-label-zh">還有什麼想告訴我們的？</div>
+    <textarea name="q8" placeholder="Your honest thoughts — about fit, fabric, design, service, anything at all...&#10;你真誠的想法 — 關於版型、面料、設計、服務，任何事都可以⋯"></textarea>
   </div>
 
   <!-- Submit -->
   <div class="submit-area">
-    <button type="submit" class="submit-btn">Send My Thoughts</button>
-    <p class="submit-note">Your responses are anonymous and deeply appreciated.</p>
+    <button type="submit" class="submit-btn">Send My Thoughts / 送出</button>
+    <p class="submit-note">Your responses are anonymous and deeply appreciated.<br>你的回覆完全匿名，我們由衷感謝。</p>
   </div>
 </div>
 </form>
@@ -527,22 +601,21 @@
 <!-- ═══ THANK YOU ═══ -->
 <div class="thank-you" id="thankYou">
   <h2>Thank You ♡</h2>
+  <div class="zh">謝謝你 ♡</div>
   <p>Your words mean more than you know.<br>They'll shape the garments you wear next.</p>
+  <p class="zh-sub">你的每一句話，都是我們前進的力量。</p>
   <div style="margin-top: 48px;">
-    <div class="brand-name" style="margin-bottom: 0;">a e o m</div>
+    <img src="https://img.shoplineapp.com/media/image_clips/68e89058bef11100143af6eb/original.png?1760071768" alt="aeom" style="height: 22px; width: auto;">
   </div>
 </div>
 
-<div class="footer">A E O M · ALL EYES ON ME</div>
+<div class="footer">AEOM · ALL EYES ON ME</div>
 
 <script>
-document.getElementById('surveyForm').addEventListener('submit', async function(e) {
+document.getElementById('surveyForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  const btn = document.querySelector('.submit-btn');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  
+  // Collect form data
   const formData = new FormData(this);
   const data = {};
   for (let [key, value] of formData.entries()) {
@@ -554,20 +627,10 @@ document.getElementById('surveyForm').addEventListener('submit', async function(
     }
   }
   
-  // Submit to Google Apps Script
-  const ENDPOINT = 'APPS_SCRIPT_URL';
-  try {
-    if (ENDPOINT !== 'APPS_SCRIPT_URL') {
-      await fetch(ENDPOINT, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-    }
-  } catch(err) {
-    console.log('Submission note:', err);
-  }
+  console.log('Survey response:', data);
+  
+  // TODO: Replace with actual form submission endpoint
+  // fetch('YOUR_ENDPOINT', { method: 'POST', body: JSON.stringify(data) });
   
   // Show thank you
   document.querySelector('.hero').style.display = 'none';
